@@ -22,7 +22,6 @@ function reverse(str) {
     //recursive case
     return str.slice(-1) + reverse(str.slice(0, -1)) // e + hous
   }
-  //recursive step
 }
 
 
