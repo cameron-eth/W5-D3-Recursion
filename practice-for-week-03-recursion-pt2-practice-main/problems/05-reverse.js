@@ -15,6 +15,14 @@ reverse(""); // ""
 
 function reverse(str) {
   // Your code here
+  //base case
+  if (str.length === 0) {
+    return "";
+  } else {
+    //recursive case
+    return str.slice(-1) + reverse(str.slice(0, -1)) // e + hous
+  }
+  //recursive step
 }
 
 
