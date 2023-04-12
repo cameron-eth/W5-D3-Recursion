@@ -14,7 +14,19 @@ addToTwelve([1]); // false
 
 
 function addToTwelve(arr) {
-  // Your code here
+
+  //Base case
+  if(arr.length < 2) {
+    return false
+  }
+  //Recursive Case
+  if(arr[0] + arr[1] === 12) {
+    return true
+  }
+  arr.shift() 
+  return addToTwelve(arr)
+
+  //Base Step
 }
 
 
