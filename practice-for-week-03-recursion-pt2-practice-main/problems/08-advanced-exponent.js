@@ -23,8 +23,17 @@ Examples:
 advancedExponent(2, 0); // 1
 advancedExponent(2, 1); // 2
 advancedExponent(2, 2); // 4
+b: 2
+n: 2
+return: exponent(2, 1) * exponent(2, 1) = 2^2 = 4
 advancedExponent(2, 3); // 8
+b: 2
+n: 3
+return: 2 * exponent(2,1) * exponent(2,1) = 2 * 2 *2
 advancedExponent(2, 4); // 16
+b: 2
+n: 4
+return: exponent(2,2) * exponent(2,2)
 advancedExponent(2, 5); // 32
 advancedExponent(2, 6); // 64
 advancedExponent(2, 7); // 128
@@ -42,6 +51,18 @@ times `advancedExponent` is being recursively called.
 
 function advancedExponent(b, n) {
   // Your code here
+  //base case
+  if (n === 0) return 1;
+  if (n === 1) return b;
+
+  //recursive case
+  if (n % 2 === 0) {
+    return advancedExponent(b, n / 2) * advancedExponent(b, n / 2);
+  } else {
+    return b * advancedExponent(b, (n - 1) / 2) * advancedExponent(b, (n - 1) / 2);
+  }
+
+
 }
 
 
